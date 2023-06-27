@@ -2,7 +2,9 @@ This code is a MATLAB implementation of *chordal conversion* that uses
 [MOSEK](https://www.mosek.com/) to solve a standard-form semidefinite
 program (SDP) over a single *n* × *n* matrix variable and subject to *m*
 linear constraints:
+
 min<sub>*X* ≽ 0</sub>{⟨*C*,*X*⟩:lb<sub>*i*</sub>≤⟨*A*<sub>*i*</sub>,*X*⟩≤ub<sub>*i*</sub> for all *i*∈{1,2,…,*m*}},
+
 where *X* ≽ 0 indicates that the matrix variable *X* should be symmetric
 positive semidefinite.
 
@@ -88,7 +90,9 @@ The output is given as follows
 A necessary condition for the code to be fast is that the aggregate
 sparsity graph *G* = (*V*,*E*) defined below should have a *small
 treewidth*:
+
 *V* = {1, 2, …, *n*},  *E* = spar(*C*) ∪ spar(*A*<sub>1</sub>) ∪ ⋯ ∪ spar(*A*<sub>*m*</sub>),
+
 where
 spar(*C*) ≡ {(*i*,*j*) : *C*\[*i*,*j*\] ≠ 0 for *i* \> *j*}.
 In other words, if *G* does *not* have a small treewidth, then the code
@@ -113,7 +117,9 @@ with dense diagonals, then the code will be slow.
 A sufficient condition for the code to be fast is that the *extended*
 aggregate sparsity graph *G*<sup>ext</sup> = (*V*,*E*<sup>ext</sup>)
 defined below also needs to have a small treewidth:
+
 *V* = {1, 2, …, *n*},  *E*<sup>ext</sup> = spar(*C*) ∪ clique(*A*<sub>1</sub>) ∪ ⋯ ∪ clique(*A*<sub>*m*</sub>)
+
 where
 clique(*A*) = {(*i*,*j*) : *A*\[*i*,*k*\] ≠ 0 or *A*\[*k*,*j*\] ≠ 0 for some *k*}.
 In other words, if *G*<sup>ext</sup> has a small treewidth, then the
