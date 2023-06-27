@@ -3,7 +3,7 @@ This code is a MATLAB implementation of *chordal conversion* that uses
 program (SDP) over a single *n* × *n* matrix variable and subject to *m*
 linear constraints:
 
-min<sub>*X* ≽ 0</sub> ⟨*C*,*X*⟩   subject to lb<sub>*i*</sub> ≤ ⟨*A*<sub>*i*</sub>,*X*⟩ ≤ ub<sub>*i*</sub> for all *i*∈{1,2,…,*m*},
+min<sub>*X* ≽ 0</sub> ⟨*C*,*X*⟩   subject to lb<sub>*i*</sub> ≤ ⟨*A*<sub>*i*</sub>, *X*⟩ ≤ ub<sub>*i*</sub> for all *i*∈{1,2,…,*m*},
 
 where *X* ≽ 0 indicates that the matrix variable *X* should be symmetric
 positive semidefinite.
