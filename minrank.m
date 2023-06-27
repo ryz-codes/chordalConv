@@ -1,6 +1,11 @@
 function [U] = minrank(X, clique, parent)
 %MINRANK Minimum rank chordal completion
 
+% Author: Richard Y Zhang <ryz@illinois.edu>
+
+% This program is licenced under the BSD 2-Clause licence,
+% contained in the LICENCE file in this directory.
+
 % Generate a postordering via recursive DFS
 % TODO: replace with nonrecursive DFS!
 [ch, root] = p2ch(parent); % Get children pointers
