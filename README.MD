@@ -8,15 +8,15 @@ min<sub>*X* ≽ 0</sub>{⟨*C*,*X*⟩:lb<sub>*i*</sub>≤⟨*A*<sub>*i*</sub
 where *X* ≽ 0 indicates that the matrix variable *X* should be symmetric
 positive semidefinite.
 
-The problem data are the objective matrix *C* ∈ 𝕊<sup>*n*</sup>, the
+The problem data are the objective matrix *C* ∈ **S**<sup>*n*</sup>, the
 list of *m* constraint matrices
-*A*<sub>1</sub>, *A*<sub>2</sub>, …, *A*<sub>*m*</sub> ∈ 𝕊<sup>*n*</sup>
+*A*<sub>1</sub>, *A*<sub>2</sub>, …, *A*<sub>*m*</sub> ∈ **S**<sup>*n*</sup>
 and associated lower-bounds
-lb<sub>1</sub>, lb<sub>2</sub>, …, lb<sub>*m*</sub> ∈ ℝ ∪ { − ∞} and
+lb<sub>1</sub>, lb<sub>2</sub>, …, lb<sub>*m*</sub> ∈ **R** ∪ { − ∞} and
 upper-bounds
-ub<sub>1</sub>, ub<sub>2</sub>, …, ub<sub>*m*</sub> ∈ ℝ ∪ { + ∞}, where
-𝕊<sup>*n*</sup> is the set of *n* × *n* real symmetric matrices. In this
-case, the matrix inner product is explicitly written
+ub<sub>1</sub>, ub<sub>2</sub>, …, ub<sub>*m*</sub> ∈ **R** ∪ { + ∞},
+where **S**<sup>*n*</sup> is the set of *n* × *n* real symmetric
+matrices. In this case, the matrix inner product is explicitly written
 ⟨*C*, *X*⟩ = trace(*C*<sup>*T*</sup>*X*).
 
 **Main feature.** Under suitable *small treewidth* assumptions (see
@@ -33,8 +33,8 @@ hours, on a modest workstation with a Xeon 3.3 GHz quad-core CPU and 32
 GB of RAM.
 
 **Complex data.** The code also natively supports complex-valued data
-*C*, *A*<sub>1</sub>, *A*<sub>2</sub>, …, *A*<sub>*m*</sub> ∈ ℍ<sup>*n*</sup>,
-where ℍ<sup>*n*</sup> is the set of *n* × *n* complex Hermitian
+*C*, *A*<sub>1</sub>, *A*<sub>2</sub>, …, *A*<sub>*m*</sub> ∈ **H**<sup>*n*</sup>,
+where **H**<sup>*n*</sup> is the set of *n* × *n* complex Hermitian
 matrices. The matrix inner product is now
 ⟨*C*, *X*⟩ = Re{trace(*C*<sup>*H*</sup>*X*)}, in which the superscript
 *H* indicates the conjugate transpose. (The bounds lb<sub>*i*</sub> and
@@ -67,8 +67,8 @@ The input is provided in SeDuMi format:
     symmetric or complex Hermitian.
 
 -   `lb` and `ub` are dense *m* × 1 vectors, whose *i*-th elements
-    represent lb<sub>*i*</sub> ∈ ℝ ∪ { − ∞} and
-    ub<sub>*i*</sub> ∈ ℝ ∪ { + ∞} respectively. All elements must
+    represent lb<sub>*i*</sub> ∈ **R** ∪ { − ∞} and
+    ub<sub>*i*</sub> ∈ **R** ∪ { + ∞} respectively. All elements must
     satisfy lb<sub>*i*</sub> ≤ ub<sub>*i*</sub>.
 
 The output is given as follows
@@ -81,7 +81,7 @@ The output is given as follows
     operations with *U*.
 
 -   `v` is an *m* × 2 dense matrix, containing the dual Lagrange
-    multipliers. 
+    multipliers.
 
 -   `info` is a struct containing various timing information.
 
@@ -127,7 +127,7 @@ code is guaranteed to be fast. (But the code may be fast even if
 *G*<sup>ext</sup> does not have a small treewidth.)
 
 It turns out to be surprisingly difficult to efficiently compute the
-adjancecy matrix of *G*<sup>ext</sup> once *n* and *m* become large. We
+adjacency matrix of *G*<sup>ext</sup> once *n* and *m* become large. We
 provide an efficient implementation below.
 
     [~,AdjExt] = sparseGraph(c,At);
