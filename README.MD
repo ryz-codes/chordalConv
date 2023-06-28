@@ -44,6 +44,12 @@ ub<sub>*i*</sub> must still be real-valued.)
 
 **Citation.** If you find this code helpful or use it in your projects,
 please cite:
+    @article{zhang2023parameterized,
+      title={Parameterized Complexity of Chordal Conversion for Sparse Semidefinite Programs with Small Treewidth},
+      author={Zhang, Richard Y},
+      journal={arXiv preprint arXiv:2306.15288},
+      year={2023}
+    }
 
 # Installation and usage notes
 
